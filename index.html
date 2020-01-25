@@ -1,0 +1,211 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta property="og:title" content="UnityとWiiFit(Wii Balance Board)をつないで遊んでみた">
+		<meta property="og:type" content="article">
+		<meta property="og:site_name" content="UnityとWiiFit(Wii Balance Board)をつないで遊んでみた">
+		<meta property="og:url" content="https://takupresentations.github.io/gotanda-unity-20200108/">
+		<meta property="og:image" content="https://takupresentations.github.io/gotanda-unity-20200108/images/wiifitpresentation.png">
+		<meta property="og:image:width" content="3360">
+		<meta property="og:image:height" content="1569">
+		<meta property="og:description" content="UnityとWiiFit(Wii Balance Board)をつないで遊んでみた">
+		<title>UnityとWiiFit(Wii Balance Board)をつないで遊んでみた</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-102679583-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-102679583-2');
+    </script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>tokyo.blender</h1>
+					<img src="https://connpass-tokyo.s3.amazonaws.com/thumbs/a5/79/a5791358e64bec6acc0d9863d1fa0362.png">
+				</section>
+				<section>
+					<h2>イントロダクション</h2>
+					<ul>
+						<li>Tokyo.Blenderとは東京周辺でのBlenderユーザーのコミュニティです</li>
+						<li>Blenderを勉強したい・やってみたい人達が集まり協力し合える場となることを目指します(初心者大歓迎)</li>
+						<li>月1回開催予定</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Blenderとは?</h2>
+					<p><a href="https://www.blender.org/"><img src="./images/Logo_Blender.png"></a></p>
+					<p>Blenderとは<span style="color: #ff0000;">無料</span>で使用できるオープンソースの統合型3DCGソフトウェアです。</p>
+				</section>
+				<section>
+					<h2>Blenderで作られたもの1</h2>
+					<table>
+						<tr>
+							<td>
+								<img src="https://pbs.twimg.com/media/DvvqzM1UUAEC8mZ?format=jpg&name=large">
+							</td>
+							<td>
+								<img src="https://pbs.twimg.com/media/Dvv3Q-8UUAEUImI?format=jpg&name=4096x4096">
+							</td>
+							<td>
+								<img src="https://pbs.twimg.com/media/Dvuq9Q7U8AAsIOg?format=jpg&name=large">
+							</td>
+						</tr>
+					</table>
+					<p>by <a href="https://twitter.com/hashtag/%E4%BB%8A%E5%B9%B4%E4%BD%9C%E3%81%A3%E3%81%9Fblender%E4%BD%9C%E5%93%81%E8%B2%BC%E3%81%A3%E3%81%A6%E3%81%91">#今年作ったblender作品貼ってけ</a></p>
+				</section>
+				<section>
+					<h2>Blenderで作られたもの2</h2>
+					<p><iframe width="560" height="315" src="https://www.youtube.com/embed/mN0zPOpADL4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+					<p><a href="https://www.youtube.com/watch?v=mN0zPOpADL4">https://www.youtube.com/watch?v=mN0zPOpADL4</a></p>
+				</section>
+				<section>
+					<h2>関連ツール</h2>
+					<table>
+						<tr>
+							<td>
+								<p><a href="https://unity.com/"><img src="https://unity3d.com/files/images/ogimg.jpg"></a></p>
+								<p style="text-align: center;"><a href="https://unity.com/">Unity</a></p>
+							</td>
+							<td>
+								<p><a href="https://www.unrealengine.com/"><img src="https://cdn2.unrealengine.com/Unreal+Engine%2F11_18_UE_Feed_Migration_Images%2FFEED_THUMB_UE_Logo_Generic-1400x788-c11642ffb55e268095321f5eb144f469beb0074f.jpg"></a></p>
+								<p style="text-align: center;"><a href="https://www.unrealengine.com/">Unreal Engine(UE4)</a></p>
+							</td>
+							<td>
+								<p><a href="https://threejs.org/"><img src="https://miro.medium.com/max/724/1*aDcnXab1QC_5KF8JUxDEYA.png"></a></p>
+								<p style="text-align: center;"><a href="https://threejs.org/">three.js</a></p>
+							</td>
+						</tr>
+					</table>
+					<p>→ プログラマ(エンジニア)向けのツール</p>
+				</section>
+				<section>
+					<h2>競合ツール</h2>
+					<table>
+						<tr>
+							<td>
+								<p><a href="https://www.autodesk.co.jp/products/maya/overview"><img src="https://cdn.shopify.com/shopifycloud/help/assets/partners/3d-warehouse/creating-3d-models/maya-logo-12ab3068f60845dce17821b6fcc39c6f3e7cad0f8c121d3e80f4768c5712b07c.png" width="500"></a></p>
+								<p style="text-align: center;"><a href="https://www.autodesk.co.jp/products/maya/overview">Maya</a></p>
+							</td>
+							<td>
+								<p><a href="https://www.autodesk.co.jp/products/3ds-max/overview"><img src="https://cdn.worldvectorlogo.com/logos/3ds-max-full.svg" width="500"></a></p>
+								<p style="text-align: center;"><a href="https://www.autodesk.co.jp/products/3ds-max/overview">3ds Max</a></p>
+							</td>
+							<td>
+								<p><a href="https://www.metaseq.net/jp/download/"><img src="data:image/png;base64,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"></a></p>
+								<p style="text-align: center;"><a href="https://www.metaseq.net/jp/download/">Metasequoia</a></p>
+							</td>
+						</tr>
+					</table>
+					<p>有料、もしくは無料版は機能か期間が制限される</p>
+				</section>
+				<section>
+					<h2>局所的に有用なツール</h2>
+					<table>
+						<tr>
+							<td>
+								<p><a href="https://vroid.com/"><img src="https://pbs.twimg.com/profile_images/1012356936484859905/38p-e9_D_400x400.jpg"></a></p>
+								<p style="text-align: center;"><a href="https://vroid.com/">VRoid</a></p>
+							</td>
+							<td>
+								<p><a href="https://w.atwiki.jp/vpvpwiki/pages/187.html"><img src="https://thumbnail-file.storage.bowlroll.net/file_thumbnail/1/5/1/151ff5e94ba39b965b2c11b87fe45c2f6b1a4b6471389big.png"></a></p>
+								<p style="text-align: center;"><a href="https://w.atwiki.jp/vpvpwiki/pages/187.html">Miku Miku Dance</a></p>
+							</td>
+						</tr>
+					</table>
+					<p>→ Blenderはこれらのツールとも親和性が高い</p>
+				</section>
+				<section>
+					<h2>開催趣旨</h2>
+					<p>Unityのコミュニティはだいぶ活発になりました</p>
+					<table>
+						<tr>
+							<td>
+								<p><a href="https://gotanda-unity.connpass.com/"><img src="https://connpass-tokyo.s3.amazonaws.com/thumbs/1f/19/1f19db43f79387da237fc119b8fd4633.png"></a></p>
+							</td>
+							<td>
+								<p><a href="https://roppongiunity.connpass.com/"><img src="https://connpass-tokyo.s3.amazonaws.com/thumbs/20/08/20084b2a4203dd743c481b35ee636e53.png"></a></p>
+							</td>
+							<td>
+								<p><a href="https://yokohamaunity.connpass.com/"><img src="https://connpass-tokyo.s3.amazonaws.com/thumbs/34/7d/347d1299e88b530e2d1b8fb97078e238.png"></a></p>
+							</td>
+						</tr>
+					</table>
+					<p>Blenderのコミュニティはあまりない... → 作ろう</p>
+				</section>
+				<section>
+					<h2>Blenderの質問について</h2>
+					<table>
+						<tr>
+							<td>
+								<p><a href="https://twitter.com/hashtag/blender%E8%B3%AA%E5%95%8F%E5%AE%A4">#Blender質問室</a></p>
+							</td>
+							<td>
+								<p><a href="https://twitter.com/search?q=%23Blender%E8%B3%AA%E5%95%8F">#Blender質問</a></p>
+							</td>
+						</tr>
+					</table>
+					<p>Twitterでこれらのタグをつけて質問すると答えてくれるらしい</p>
+				</section>
+				<section>
+					<h2>Blenderの勉強部屋</h2>
+					<p>Discord</p>
+					<table>
+						<tr>
+							<td>
+								<p style="text-align: center;"><a href="https://discord.gg/ysXSyR"><img src="./images/tokyoblenderdiscord.png"></a></p>
+								<p style="text-align: center;"><a href="https://discord.gg/ysXSyR">tokyo.blender</a></p>
+							</td>
+							<td>
+								<p style="text-align: center;"><a href="https://discordapp.com/invite/KfWawfQ"><img src="./images/blenderwork.png"></a></p>
+								<p style="text-align: center;"><a href="https://discordapp.com/invite/KfWawfQ">Blender作業部屋</a></p>
+							</td>
+						</tr>
+					</table>
+					<p>みんな参加してね!!</p>
+				</section>
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				history: true,
+				keyboard: true,
+				defaultTiming: 800,
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
+
